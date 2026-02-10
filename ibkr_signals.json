@@ -88,8 +88,8 @@
             "ticker": "NCLTY",
             "action": "Long",
             "allocation_usd": 10000,
-            "sl_factor": 0.4,
-            "z_score": 0.22,
+            "sl_factor": 3.2,
+            "z_score": 0.21,
             "prev_return_pct": null,
             "vol_ratio": 0.59,
             "ticker_group": "SMALL"
@@ -102,7 +102,7 @@
             "allocation_usd": 10000,
             "sl_factor": 0.4,
             "z_score": null,
-            "prev_return_pct": 11.08,
+            "prev_return_pct": 9.68,
             "vol_ratio": 2.44,
             "ticker_group": "SMALL"
         },
@@ -112,18 +112,18 @@
             "allocation_usd": 10000,
             "sl_factor": 0.6,
             "z_score": null,
-            "prev_return_pct": 6.76,
+            "prev_return_pct": 6.92,
             "vol_ratio": 2.44,
             "ticker_group": "SMALL"
         },
         {
-            "ticker": "TPL",
+            "ticker": "KVYO",
             "action": "Long",
             "allocation_usd": 10000,
-            "sl_factor": 0.4,
+            "sl_factor": 3.2,
             "z_score": null,
-            "prev_return_pct": 6.06,
-            "vol_ratio": 1.48,
+            "prev_return_pct": 6.29,
+            "vol_ratio": 1.64,
             "ticker_group": "SMALL"
         }
     ]
