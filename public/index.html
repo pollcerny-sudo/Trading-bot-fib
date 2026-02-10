@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Trading Backtest Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+  --bbg-black:#000000;
+  --bbg-panel:#0b0b0b;
+  --bbg-panel-2:#121212;
+  --bbg-border:#ff9f00;
+  --bbg-amber:#ffb000;
+  --bbg-blue-light:#4da3ff;
+  --bbg-blue-dark:#003a8c;
+  --bbg-green:#00c853;
+  --bbg-red:#d50000;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:var(--bbg-black);
+  color:#d0d0d0;
+  padding:20px;
+  margin:0;
+}
+
+h1,h2,h3{
+  color:var(--bbg-amber);
+  letter-spacing:0.5px;
+}
+
+.card {
+  background:linear-gradient(180deg,var(--bbg-panel),var(--bbg-panel-2));
+  padding:20px;
+  margin-bottom:25px;
+  border-radius:8px;
+  overflow-x:auto;
+  border:1px solid #222;
+  box-shadow:0 0 0 1px #111 inset;
+}
+
+table {
+  width:100%;
+  border-collapse: collapse;
+  min-width:400px;
+}
+
+th {
+  background:#111;
+  color:var(--bbg-amber);
+  font-weight:bold;
+}
+
+th, td {
+  border:1px solid #222;
+  padding:6px;
+  font-size:13px;
+  text-align:center;
+}
+
+tr:nth-child(even){
+  background:#0f0f0f;
+}
+
+td.profit-positive { color: var(--bbg-green); font-weight:bold; }
+td.profit-negative { color: var(--bbg-red); font-weight:bold; }
+
+select, input, button{
+  background:#111;
+  color:#ddd;
+  border:1px solid #333;
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+button{
+  background:#1a1a1a;
+  border:1px solid var(--bbg-amber);
+  color:var(--bbg-amber);
+  cursor:pointer;
+}
+
+button:hover{
+  background:#262626;
+}
+
+canvas {
+  background:#050505;
+  border-radius:8px;
+  border:1px solid #222;
+  width:100% !important;
+}
+
+.controls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.return-comparison {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+.return-box {
+  background:#0f0f0f;
+  padding:12px;
+  border-radius:8px;
+  flex:1 1 180px;
+  text-align:center;
+  font-weight:bold;
+  border:1px solid #222;
+  color:var(--bbg-amber);
+}
+
+@media(max-width:768px){
+  .controls { flex-direction:column; }
+  table { font-size:12px; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Backtest Dashboard</h1>
+
+  
+<div class="controls">
+  <label>Strategy:
+    <select id="strategySelect"></select>
+  </label>
+
+  <label>Last Days:
+    <input type="number" id="lastDays" value="3" min="1" max="30">
+  </label>
+
+  <button id="updateBtn">Update</button>
+</div>
+
+<div id="returnComparison" class="return-comparison"></div>
+
+<div class="card">
+  <canvas id="multiChart" height="140"></canvas>
+</div>
+
+<div id="stats"></div>
+
+<script>
+const BACKTEST_URL="https://trading-agent-bot.pages.dev/backtest_60d_results.json";
+const DASHBOARD_URL="https://trading-agent-bot.pages.dev/dashboard_data.json";
+const CSV_URL="https://raw.githubusercontent.com/pollcerny-sudo/trading-agent-bot/main/final_backtest_results.csv";
+
+let backtestData={}, dashboardData={}, csvData=[];
+let chartInstance=null;
+
+// ---------- helpers ----------
+function pick(o,keys){
+  for(const k of keys) if(o[k]!=null && o[k]!="") return o[k];
+  return "";
+}
+
+function normDate(d){
+  if(!d) return "";
+  return String(d).slice(0,10);
+}
+
+function getTradePnl(t){
+  const v = pick(t,["Profit","profit","pnl","ret","return"]);
+  const n = Number(v);
+  return isNaN(n)?0:n;
+}
+
+// ---------- rendering ----------
+function renderTrades(trades){
+  if(!trades.length) return "No trades";
+
+  return `<table>
+  <tr><th>Date</th><th>Ticker</th><th>Side</th><th>PnL</th></tr>`+
+  trades.map(t=>{
+    const d = normDate(pick(t,["Date","date","entry_date"]));
+    const ticker = pick(t,["Ticker","ticker","symbol","asset"]);
+    const side = pick(t,["Side","side","direction","position"]);
+    const pnl = getTradePnl(t);
+    return `<tr>
+      <td>${d}</td>
+      <td>${ticker}</td>
+      <td>${side}</td>
+      <td class="${pnl>=0?"profit-positive":"profit-negative"}">${pnl.toFixed(2)}</td>
+    </tr>`;
+  }).join("")+"</table>";
+}
+
+function renderSignals(signals){
+  if(!signals.length) return "No signals";
+  return `<table>
+  <tr><th>Ticker</th><th>Action</th><th>Allocation</th><th>SL</th></tr>`+
+  signals.map(s=>`
+  <tr>
+    <td>${s.ticker}</td>
+    <td>${s.action}</td>
+    <td>$${s.allocation_usd.toLocaleString()}</td>
+    <td>${s.sl_factor}</td>
+  </tr>`).join("")+"</table>";
+}
+
+// ---------- CSV ----------
+async function loadCSV(){
+  const txt = await (await fetch(CSV_URL)).text();
+  const lines = txt.trim().split("\n");
+  const header = lines[0].split(",");
+  csvData = lines.slice(1).map(l=>{
+    const c=l.split(",");
+    let o={}; header.forEach((h,i)=>o[h.trim()]=c[i]);
+    return o;
+  });
+}
+
+function groupByDate(trades){
+  const g={};
+  trades.forEach(t=>{
+    const d = normDate(pick(t,["Date","date","entry_date"]));
+    if(!g[d]) g[d]=[];
+    g[d].push(t);
+  });
+  return g;
+}
+
+// ---------- dashboard ----------
+function buildDashboard(strategy,lastDays){
+
+  const stats=document.getElementById("stats");
+  stats.innerHTML="";
+
+  const csvStrat = csvData.filter(t=>t.Strategy===strategy);
+  const btStrat = backtestData[strategy]?.trades || [];
+
+  const csvG = groupByDate(csvStrat);
+  const btG = groupByDate(btStrat);
+
+  const dates = Object.keys({...csvG,...btG}).sort().slice(-lastDays);
+
+  const csvDaily = dates.map(d=> (csvG[d]||[]).reduce((a,b)=>a+getTradePnl(b),0));
+  const btDaily  = dates.map(d=> (btG[d]||[]).reduce((a,b)=>a+getTradePnl(b),0));
+
+  let csvCum=[], btCum=[], s=0, b=0;
+  csvDaily.forEach(v=>{s+=v; csvCum.push(s)});
+  btDaily.forEach(v=>{b+=v; btCum.push(b)});
+
+  if(chartInstance) chartInstance.destroy();
+
+  const ctx = multiChart.getContext('2d');
+
+  // gradient čára CSV
+  const gradLine = ctx.createLinearGradient(0,0,0,0);
+  gradLine.addColorStop(0,'#4da3ff');
+  gradLine.addColorStop(1,'#003a8c');
+
+  // gradient fill pod CSV od osy X nahoru
+  const gradFill = ctx.createLinearGradient(0, multiChart.height, 0, 0);
+  gradFill.addColorStop(0,'rgba(0,58,140,0.4)');  // tmavá u osy
+  gradFill.addColorStop(1,'rgba(77,163,255,0.3)'); // světlá u čáry
+
+  chartInstance = new Chart(multiChart, {
+    type:'line',
+    data: {
+      labels: dates,
+      datasets:[
+        {
+          label:"CSV Cum P/L",
+          data: csvCum,
+          borderColor: '#4da3ff',
+          borderWidth:3,
+          fill: true,
+          backgroundColor: gradFill,
+          tension:0.25,
+          pointRadius:0
+        },
+        {
+          label:"Backtest Cum P/L",
+          data: btCum,
+          borderColor:'#ff9f00',
+          borderWidth:2,
+          fill: true,
+          backgroundColor:'rgba(255,176,0,0.2)',
+          tension:0.25,
+          pointRadius:0
+        }
+      ]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#ddd'}}},
+      scales:{
+        x:{ticks:{color:'#aaa'},grid:{color:'#222'}},
+        y:{ticks:{color:'#aaa'},grid:{color:'#222'}}
+      }
+    }
+  });
+
+  returnComparison.innerHTML=`
+  <div class="return-box">Equity Total: $${s.toFixed(2)}</div>
+  <div class="return-box">Backtest Total: $${b.toFixed(2)}</div>`;
+
+  const m = dashboardData.strategies[strategy];
+  if(m){
+    const met=m.metrics;
+    stats.innerHTML+=`
+    <div class="card">
+    <h2>Current ${m.name} (${strategy})</h2>
+    Total Profit: $${met.total_profit.toFixed(2)}<br>
+    Total Return: ${met.total_return_pct.toFixed(2)}%<br>
+    Trades: ${met.num_trades} | Win Rate: ${met.win_rate.toFixed(2)}%<br>
+    Sharpe: ${met.sharpe_ratio.toFixed(2)} | PF: ${met.profit_factor.toFixed(2)}
+    <h3>Signals</h3>
+    ${renderSignals(dashboardData.signals[strategy]||[])}
+    </div>`;
+  }
+
+  dates.forEach(d=>{
+    if(btG[d]){
+      const p = btG[d].reduce((a,b)=>a+getTradePnl(b),0);
+      stats.innerHTML+=`<div class="card">
+      <h3>Backtest ${d} — $${p.toFixed(2)}</h3>
+      ${renderTrades(btG[d])}</div>`;
+    }
+  });
+
+  dates.forEach(d=>{
+    if(csvG[d]){
+      const p = csvG[d].reduce((a,b)=>a+getTradePnl(b),0);
+      stats.innerHTML+=`<div class="card">
+      <h3>CSV ${d} — $${p.toFixed(2)}</h3>
+      ${renderTrades(csvG[d])}</div>`;
+    }
+  });
+}
+
+// ---------- load ----------
+async function loadAll(){
+  backtestData = await (await fetch(BACKTEST_URL)).json();
+  dashboardData = await (await fetch(DASHBOARD_URL)).json();
+  await loadCSV();
+
+  Object.keys(dashboardData.strategies).forEach(k=>{
+    strategySelect.innerHTML += `<option value="${k}">${k}</option>`;
+  });
+
+  buildDashboard(strategySelect.value, Number(lastDays.value));
+}
+
+updateBtn.onclick=()=>buildDashboard(strategySelect.value,Number(lastDays.value));
+loadAll();
+</script>
+</body>
+</html>
