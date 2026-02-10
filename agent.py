@@ -952,7 +952,7 @@ def generate_signals_for_tomorrow(ticker_data, optimized_sl, ticker_performance)
                 print(f"    • {sig['ticker']:6s} {sig['action']:5s} ({sig['ticker_group']:>10s}) | SL={sig['sl_factor']:.2f} | Z={sig.get('z_score', 0):.2f}")
     
     return final_signals
-
+def run_agent():
 
     """
     VEČERNÍ REŽIM (Evening-only):
