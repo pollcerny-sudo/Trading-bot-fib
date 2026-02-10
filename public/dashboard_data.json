@@ -1,60 +1,60 @@
 {
-  "timestamp": "2026-02-10T20:39:17.128218",
+  "timestamp": "2026-02-10T23:37:01.186218",
   "strategies": {
     "A": {
       "name": "Mean Reversion",
       "metrics": {
-        "total_profit": -28.249999999999996,
-        "total_return_pct": -0.2825,
+        "total_profit": -52.19,
+        "total_return_pct": -0.5218999999999999,
         "num_trades": 15,
         "win_rate": 53.333333333333336,
         "avg_win": 98.17375,
-        "avg_loss": -116.23428571428573,
-        "sharpe_ratio": -0.2533915856492559,
-        "max_drawdown_pct": 5.066504784513438,
-        "profit_factor": 0.8446195491863722
+        "avg_loss": -119.65428571428573,
+        "sharpe_ratio": -0.4604896420548591,
+        "max_drawdown_pct": 5.2946518850725655,
+        "profit_factor": 0.8204783423672961
       }
     },
     "B": {
       "name": "Volume Breakout",
       "metrics": {
-        "total_profit": -526.74,
-        "total_return_pct": -5.2674,
+        "total_profit": -645.78,
+        "total_return_pct": -6.4578,
         "num_trades": 15,
-        "win_rate": 46.666666666666664,
-        "avg_win": 66.32142857142857,
-        "avg_loss": -123.87375,
-        "sharpe_ratio": -5.193955970165759,
+        "win_rate": 33.33333333333333,
+        "avg_win": 75.33,
+        "avg_loss": -102.243,
+        "sharpe_ratio": -6.609434633825107,
         "max_drawdown_pct": 6.999252784506065,
-        "profit_factor": 0.5353953405901458
+        "profit_factor": 0.7367741556879199
       }
     },
     "V": {
       "name": "Trend Breakout",
       "metrics": {
-        "total_profit": 251.62000000000003,
-        "total_return_pct": 2.5162000000000004,
+        "total_profit": 297.56000000000006,
+        "total_return_pct": 2.9756000000000005,
         "num_trades": 15,
         "win_rate": 53.333333333333336,
         "avg_win": 88.8575,
-        "avg_loss": -65.60571428571428,
-        "sharpe_ratio": 2.800999961406479,
+        "avg_loss": -59.04285714285714,
+        "sharpe_ratio": 3.430126648479495,
         "max_drawdown_pct": 2.64572914582917,
-        "profit_factor": 1.354417080393694
+        "profit_factor": 1.5049661263005083
       }
     },
     "M": {
       "name": "Momentum",
       "metrics": {
-        "total_profit": 7011.799999999999,
-        "total_return_pct": 70.118,
+        "total_profit": 7024.879999999999,
+        "total_return_pct": 70.24879999999999,
         "num_trades": 12,
         "win_rate": 75.0,
-        "avg_win": 822.7966666666666,
+        "avg_win": 824.25,
         "avg_loss": -131.12333333333333,
-        "sharpe_ratio": 16.454194394110427,
+        "sharpe_ratio": 16.47705144514239,
         "max_drawdown_pct": 2.2631016361634213,
-        "profit_factor": 6.274982840582657
+        "profit_factor": 6.28606655311793
       }
     }
   },
@@ -148,8 +148,8 @@
         "ticker": "NCLTY",
         "action": "Long",
         "allocation_usd": 10000,
-        "sl_factor": 0.4,
-        "z_score": 0.22,
+        "sl_factor": 3.2,
+        "z_score": 0.21,
         "prev_return_pct": null,
         "vol_ratio": 0.59,
         "ticker_group": "SMALL"
@@ -162,7 +162,7 @@
         "allocation_usd": 10000,
         "sl_factor": 0.4,
         "z_score": null,
-        "prev_return_pct": 11.08,
+        "prev_return_pct": 9.68,
         "vol_ratio": 2.44,
         "ticker_group": "SMALL"
       },
@@ -172,18 +172,18 @@
         "allocation_usd": 10000,
         "sl_factor": 0.6,
         "z_score": null,
-        "prev_return_pct": 6.76,
+        "prev_return_pct": 6.92,
         "vol_ratio": 2.44,
         "ticker_group": "SMALL"
       },
       {
-        "ticker": "TPL",
+        "ticker": "KVYO",
         "action": "Long",
         "allocation_usd": 10000,
-        "sl_factor": 0.4,
+        "sl_factor": 3.2,
         "z_score": null,
-        "prev_return_pct": 6.06,
-        "vol_ratio": 1.48,
+        "prev_return_pct": 6.29,
+        "vol_ratio": 1.64,
         "ticker_group": "SMALL"
       }
     ]
@@ -208,7 +208,7 @@
       },
       {
         "date": "2026-02-10",
-        "equity": 9971.75
+        "equity": 9947.81
       }
     ],
     "B": [
@@ -230,7 +230,7 @@
       },
       {
         "date": "2026-02-10",
-        "equity": 9473.26
+        "equity": 9354.22
       }
     ],
     "V": [
@@ -252,7 +252,7 @@
       },
       {
         "date": "2026-02-10",
-        "equity": 10251.62
+        "equity": 10297.56
       }
     ],
     "M": [
@@ -274,7 +274,7 @@
       },
       {
         "date": "2026-02-10",
-        "equity": 17011.8
+        "equity": 17024.88
       }
     ]
   }
