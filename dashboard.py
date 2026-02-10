@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # === KONFIGURACE ===
-GITHUB_BASE = 'https://raw.githubusercontent.com/pollcerny-sudo/trading-agent-bot/main/'
+GITHUB_BASE = 'https://raw.githubusercontent.com/pollcerny-sudo/trading-bot-fib/main/'
 CSV_URL = GITHUB_BASE + 'final_backtest_results.csv'
 JSON_URL = GITHUB_BASE + 'ibkr_signals.json'
 BACKTEST_URL = GITHUB_BASE + 'backtest_60d_results.json'
