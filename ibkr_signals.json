@@ -53,13 +53,13 @@
             "ticker_group": "BIG + ETF"
         },
         {
-            "ticker": "NDAQ",
+            "ticker": "BAESY",
             "action": "Short",
             "allocation_usd": 10000,
-            "sl_factor": 0.4,
-            "z_score": 0.07,
+            "sl_factor": 3.2,
+            "z_score": 0.1,
             "prev_return_pct": null,
-            "vol_ratio": 2.41,
+            "vol_ratio": 2.18,
             "ticker_group": "BIG + ETF"
         }
     ],
@@ -107,6 +107,16 @@
             "ticker_group": "SMALL"
         },
         {
+            "ticker": "ENTG",
+            "action": "Long",
+            "allocation_usd": 10000,
+            "sl_factor": 0.6,
+            "z_score": null,
+            "prev_return_pct": 8.89,
+            "vol_ratio": 0.85,
+            "ticker_group": "SMALL"
+        },
+        {
             "ticker": "HIMS",
             "action": "Long",
             "allocation_usd": 10000,
@@ -114,16 +124,6 @@
             "z_score": null,
             "prev_return_pct": 8.8,
             "vol_ratio": 1.26,
-            "ticker_group": "SMALL"
-        },
-        {
-            "ticker": "ENTG",
-            "action": "Long",
-            "allocation_usd": 10000,
-            "sl_factor": 0.6,
-            "z_score": null,
-            "prev_return_pct": 8.01,
-            "vol_ratio": 0.85,
             "ticker_group": "SMALL"
         }
     ]
