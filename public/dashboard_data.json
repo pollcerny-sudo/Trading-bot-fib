@@ -1,60 +1,60 @@
 {
-  "timestamp": "2026-06-19T00:24:25.744039",
+  "timestamp": "2026-06-20T00:05:26.358727",
   "strategies": {
     "A": {
       "name": "Mean Reversion",
       "metrics": {
-        "total_profit": 303.2199999999996,
-        "total_return_pct": 3.0321999999999956,
-        "num_trades": 288,
-        "win_rate": 50.69444444444444,
-        "avg_win": 114.10869863013698,
-        "avg_loss": -115.18767605633802,
-        "sharpe_ratio": 0.1058729652195746,
+        "total_profit": 145.78999999999962,
+        "total_return_pct": 1.4578999999999962,
+        "num_trades": 291,
+        "win_rate": 50.51546391752577,
+        "avg_win": 113.39020408163266,
+        "avg_loss": -114.74006944444444,
+        "sharpe_ratio": 0.05055947978255601,
         "max_drawdown_pct": 19.08863487593135,
-        "profit_factor": 0.9906328744259646
+        "profit_factor": 0.9882354493129764
       }
     },
     "B": {
       "name": "Volume Breakout",
       "metrics": {
-        "total_profit": -6614.510000000001,
-        "total_return_pct": -66.14510000000001,
-        "num_trades": 288,
-        "win_rate": 38.19444444444444,
-        "avg_win": 148.17245454545454,
-        "avg_loss": -128.72741573033704,
-        "sharpe_ratio": -2.0292212495596433,
-        "max_drawdown_pct": 70.50474657359071,
-        "profit_factor": 1.1510559246823666
+        "total_profit": -6915.6500000000015,
+        "total_return_pct": -69.15650000000001,
+        "num_trades": 291,
+        "win_rate": 38.144329896907216,
+        "avg_win": 148.5027027027027,
+        "avg_loss": -129.99694444444444,
+        "sharpe_ratio": -2.0949293232201693,
+        "max_drawdown_pct": 70.91857357063697,
+        "profit_factor": 1.142355332560658
       }
     },
     "V": {
       "name": "Trend Breakout",
       "metrics": {
-        "total_profit": 2876.4700000000003,
-        "total_return_pct": 28.764700000000005,
-        "num_trades": 290,
-        "win_rate": 45.51724137931035,
-        "avg_win": 168.0453787878788,
-        "avg_loss": -122.18683544303795,
-        "sharpe_ratio": 0.7292734083396261,
+        "total_profit": 3873.3900000000003,
+        "total_return_pct": 38.733900000000006,
+        "num_trades": 293,
+        "win_rate": 45.73378839590443,
+        "avg_win": 175.07776119402988,
+        "avg_loss": -123.1888679245283,
+        "sharpe_ratio": 0.9432825255451961,
         "max_drawdown_pct": 27.739550141287967,
-        "profit_factor": 1.3753149279835435
+        "profit_factor": 1.4212141416973758
       }
     },
     "M": {
       "name": "Momentum",
       "metrics": {
-        "total_profit": 18948.839999999997,
-        "total_return_pct": 189.48839999999996,
-        "num_trades": 263,
-        "win_rate": 46.38783269961977,
-        "avg_win": 449.6827049180328,
+        "total_profit": 21664.71,
+        "total_return_pct": 216.6471,
+        "num_trades": 266,
+        "win_rate": 46.99248120300752,
+        "avg_win": 460.6172800000001,
         "avg_loss": -254.69822695035458,
-        "sharpe_ratio": 2.4207243122022355,
+        "sharpe_ratio": 2.7044357284573057,
         "max_drawdown_pct": 32.57601133964792,
-        "profit_factor": 1.7655509828330462
+        "profit_factor": 1.8084824755760196
       }
     }
   },
@@ -113,13 +113,13 @@
         "ticker_group": "BIG + ETF"
       },
       {
-        "ticker": "NDAQ",
+        "ticker": "BAESY",
         "action": "Short",
         "allocation_usd": 10000,
-        "sl_factor": 0.4,
-        "z_score": 0.07,
+        "sl_factor": 3.2,
+        "z_score": 0.1,
         "prev_return_pct": null,
-        "vol_ratio": 2.41,
+        "vol_ratio": 2.18,
         "ticker_group": "BIG + ETF"
       }
     ],
@@ -167,6 +167,16 @@
         "ticker_group": "SMALL"
       },
       {
+        "ticker": "ENTG",
+        "action": "Long",
+        "allocation_usd": 10000,
+        "sl_factor": 0.6,
+        "z_score": null,
+        "prev_return_pct": 8.89,
+        "vol_ratio": 0.85,
+        "ticker_group": "SMALL"
+      },
+      {
         "ticker": "HIMS",
         "action": "Long",
         "allocation_usd": 10000,
@@ -174,16 +184,6 @@
         "z_score": null,
         "prev_return_pct": 8.8,
         "vol_ratio": 1.26,
-        "ticker_group": "SMALL"
-      },
-      {
-        "ticker": "ENTG",
-        "action": "Long",
-        "allocation_usd": 10000,
-        "sl_factor": 0.6,
-        "z_score": null,
-        "prev_return_pct": 8.01,
-        "vol_ratio": 0.85,
         "ticker_group": "SMALL"
       }
     ]
@@ -564,7 +564,7 @@
       },
       {
         "date": "2026-06-18",
-        "equity": 10303.22
+        "equity": 10145.79
       }
     ],
     "B": [
@@ -942,7 +942,7 @@
       },
       {
         "date": "2026-06-18",
-        "equity": 3385.49
+        "equity": 3084.35
       }
     ],
     "V": [
@@ -1320,7 +1320,7 @@
       },
       {
         "date": "2026-06-18",
-        "equity": 12876.47
+        "equity": 13873.39
       }
     ],
     "M": [
@@ -1698,7 +1698,7 @@
       },
       {
         "date": "2026-06-18",
-        "equity": 28948.84
+        "equity": 31664.71
       }
     ]
   }
