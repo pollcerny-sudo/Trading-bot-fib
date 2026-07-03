@@ -89,13 +89,23 @@
             "action": "Long",
             "allocation_usd": 10000,
             "sl_factor": 0.8,
-            "z_score": 0.13,
+            "z_score": 0.14,
             "prev_return_pct": null,
             "vol_ratio": 1.04,
             "ticker_group": "SMALL"
         }
     ],
     "M": [
+        {
+            "ticker": "NJDCY",
+            "action": "Long",
+            "allocation_usd": 10000,
+            "sl_factor": 0.4,
+            "z_score": null,
+            "prev_return_pct": 16.31,
+            "vol_ratio": 1.14,
+            "ticker_group": "SMALL"
+        },
         {
             "ticker": "GPC",
             "action": "Long",
@@ -112,18 +122,8 @@
             "allocation_usd": 10000,
             "sl_factor": 0.4,
             "z_score": null,
-            "prev_return_pct": 8.15,
+            "prev_return_pct": 8.22,
             "vol_ratio": 1.09,
-            "ticker_group": "SMALL"
-        },
-        {
-            "ticker": "MRNA",
-            "action": "Long",
-            "allocation_usd": 10000,
-            "sl_factor": 3.2,
-            "z_score": null,
-            "prev_return_pct": 7.94,
-            "vol_ratio": 1.05,
             "ticker_group": "SMALL"
         }
     ]
