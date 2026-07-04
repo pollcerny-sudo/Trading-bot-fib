@@ -1,60 +1,60 @@
 {
-  "timestamp": "2026-07-03T00:00:51.059333",
+  "timestamp": "2026-07-04T00:01:36.714684",
   "strategies": {
     "A": {
       "name": "Mean Reversion",
       "metrics": {
-        "total_profit": 383.6699999999993,
-        "total_return_pct": 3.836699999999993,
-        "num_trades": 318,
-        "win_rate": 50.62893081761006,
-        "avg_win": 112.43968944099379,
-        "avg_loss": -112.86063694267517,
-        "sharpe_ratio": 0.12345050522458145,
+        "total_profit": 570.6600000000001,
+        "total_return_pct": 5.706600000000001,
+        "num_trades": 321,
+        "win_rate": 50.77881619937694,
+        "avg_win": 113.11251533742332,
+        "avg_loss": -113.08025316455696,
+        "sharpe_ratio": 0.18169162880013714,
         "max_drawdown_pct": 19.08863487593135,
-        "profit_factor": 0.9962702009036579
+        "profit_factor": 1.0002853033307186
       }
     },
     "B": {
       "name": "Volume Breakout",
       "metrics": {
-        "total_profit": -4633.570000000001,
-        "total_return_pct": -46.33570000000001,
-        "num_trades": 318,
-        "win_rate": 39.308176100628934,
+        "total_profit": -5096.150000000001,
+        "total_return_pct": -50.9615,
+        "num_trades": 321,
+        "win_rate": 38.940809968847354,
         "avg_win": 160.07184,
-        "avg_loss": -127.68160621761659,
-        "sharpe_ratio": -1.1959335246096783,
+        "avg_loss": -128.08739795918368,
+        "sharpe_ratio": -1.3048747982732052,
         "max_drawdown_pct": 74.56087298841067,
-        "profit_factor": 1.2536797173993763
+        "profit_factor": 1.249707953713046
       }
     },
     "V": {
       "name": "Trend Breakout",
       "metrics": {
-        "total_profit": 3418.809999999999,
-        "total_return_pct": 34.18809999999999,
-        "num_trades": 320,
-        "win_rate": 45.625,
-        "avg_win": 173.93753424657535,
-        "avg_loss": -126.29925287356322,
-        "sharpe_ratio": 0.7622531892576082,
+        "total_profit": 2964.669999999999,
+        "total_return_pct": 29.646699999999992,
+        "num_trades": 323,
+        "win_rate": 45.51083591331269,
+        "avg_win": 173.34857142857143,
+        "avg_loss": -127.94073863636363,
+        "sharpe_ratio": 0.6544433544545329,
         "max_drawdown_pct": 27.739550141287967,
-        "profit_factor": 1.3771857733846002
+        "profit_factor": 1.3549130111032661
       }
     },
     "M": {
       "name": "Momentum",
       "metrics": {
-        "total_profit": 22994.159999999996,
-        "total_return_pct": 229.94159999999994,
-        "num_trades": 290,
-        "win_rate": 48.275862068965516,
-        "avg_win": 435.48371428571437,
-        "avg_loss": -253.15706666666665,
-        "sharpe_ratio": 2.704268517429399,
+        "total_profit": 24415.01,
+        "total_return_pct": 244.15009999999998,
+        "num_trades": 293,
+        "win_rate": 48.4641638225256,
+        "avg_win": 440.6910563380282,
+        "avg_loss": -252.73589403973506,
+        "sharpe_ratio": 2.8314701101197817,
         "max_drawdown_pct": 32.57601133964792,
-        "profit_factor": 1.7202115667547937
+        "profit_factor": 1.743682107412661
       }
     }
   },
@@ -149,13 +149,23 @@
         "action": "Long",
         "allocation_usd": 10000,
         "sl_factor": 0.8,
-        "z_score": 0.13,
+        "z_score": 0.14,
         "prev_return_pct": null,
         "vol_ratio": 1.04,
         "ticker_group": "SMALL"
       }
     ],
     "M": [
+      {
+        "ticker": "NJDCY",
+        "action": "Long",
+        "allocation_usd": 10000,
+        "sl_factor": 0.4,
+        "z_score": null,
+        "prev_return_pct": 16.31,
+        "vol_ratio": 1.14,
+        "ticker_group": "SMALL"
+      },
       {
         "ticker": "GPC",
         "action": "Long",
@@ -172,18 +182,8 @@
         "allocation_usd": 10000,
         "sl_factor": 0.4,
         "z_score": null,
-        "prev_return_pct": 8.15,
+        "prev_return_pct": 8.22,
         "vol_ratio": 1.09,
-        "ticker_group": "SMALL"
-      },
-      {
-        "ticker": "MRNA",
-        "action": "Long",
-        "allocation_usd": 10000,
-        "sl_factor": 3.2,
-        "z_score": null,
-        "prev_return_pct": 7.94,
-        "vol_ratio": 1.05,
         "ticker_group": "SMALL"
       }
     ]
@@ -600,7 +600,7 @@
       },
       {
         "date": "2026-07-02",
-        "equity": 10383.67
+        "equity": 10570.66
       }
     ],
     "B": [
@@ -1014,7 +1014,7 @@
       },
       {
         "date": "2026-07-02",
-        "equity": 5366.43
+        "equity": 4903.85
       }
     ],
     "V": [
@@ -1428,7 +1428,7 @@
       },
       {
         "date": "2026-07-02",
-        "equity": 13418.81
+        "equity": 12964.67
       }
     ],
     "M": [
@@ -1842,7 +1842,7 @@
       },
       {
         "date": "2026-07-02",
-        "equity": 32994.16
+        "equity": 34415.01
       }
     ]
   }
