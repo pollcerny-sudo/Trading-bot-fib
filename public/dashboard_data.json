@@ -1,105 +1,105 @@
 {
-  "timestamp": "2026-07-07T00:03:19.244498",
+  "timestamp": "2026-07-07T23:53:20.617713",
   "strategies": {
     "A": {
       "name": "Mean Reversion",
       "metrics": {
-        "total_profit": 910.1700000000001,
-        "total_return_pct": 9.1017,
-        "num_trades": 324,
-        "win_rate": 50.92592592592593,
+        "total_profit": 675.48,
+        "total_return_pct": 6.7547999999999995,
+        "num_trades": 327,
+        "win_rate": 50.45871559633027,
         "avg_win": 114.64006060606062,
-        "avg_loss": -113.24176100628932,
-        "sharpe_ratio": 0.28562630755391716,
+        "avg_loss": -112.5933950617284,
+        "sharpe_ratio": 0.2107309831552453,
         "max_drawdown_pct": 19.08863487593135,
-        "profit_factor": 1.012347914650441
+        "profit_factor": 1.0181774920563516
       }
     },
     "B": {
       "name": "Volume Breakout",
       "metrics": {
-        "total_profit": -4758.490000000001,
-        "total_return_pct": -47.584900000000005,
-        "num_trades": 324,
-        "win_rate": 39.50617283950617,
-        "avg_win": 158.958125,
-        "avg_loss": -128.08739795918368,
-        "sharpe_ratio": -1.2084510200751772,
+        "total_profit": -4884.4400000000005,
+        "total_return_pct": -48.84440000000001,
+        "num_trades": 327,
+        "win_rate": 39.44954128440367,
+        "avg_win": 158.38054263565894,
+        "avg_loss": -127.85621212121211,
+        "sharpe_ratio": -1.2333682091348512,
         "max_drawdown_pct": 74.56087298841067,
-        "profit_factor": 1.2410129921653463
+        "profit_factor": 1.2387395184639813
       }
     },
     "V": {
       "name": "Trend Breakout",
       "metrics": {
-        "total_profit": 3368.0199999999986,
-        "total_return_pct": 33.680199999999985,
-        "num_trades": 326,
-        "win_rate": 45.70552147239264,
-        "avg_win": 174.1980536912752,
-        "avg_loss": -127.61293785310734,
-        "sharpe_ratio": 0.7354480930165584,
+        "total_profit": 3303.6399999999994,
+        "total_return_pct": 33.03639999999999,
+        "num_trades": 329,
+        "win_rate": 45.59270516717325,
+        "avg_win": 173.25206666666668,
+        "avg_loss": -126.72720670391061,
+        "sharpe_ratio": 0.7179129412453296,
         "max_drawdown_pct": 27.739550141287967,
-        "profit_factor": 1.36505010089017
+        "profit_factor": 1.3671260589800436
       }
     },
     "M": {
       "name": "Momentum",
       "metrics": {
-        "total_profit": 24278.589999999997,
-        "total_return_pct": 242.78589999999997,
-        "num_trades": 295,
-        "win_rate": 48.47457627118644,
+        "total_profit": 23266.980000000003,
+        "total_return_pct": 232.66980000000004,
+        "num_trades": 297,
+        "win_rate": 48.148148148148145,
         "avg_win": 437.9095804195805,
-        "avg_loss": -252.2531578947368,
-        "sharpe_ratio": 2.804546641049486,
+        "avg_loss": -255.54603896103893,
+        "sharpe_ratio": 2.6643640998513716,
         "max_drawdown_pct": 32.57601133964792,
-        "profit_factor": 1.7359924612016815
+        "profit_factor": 1.713623041076935
       }
     }
   },
   "signals": {
     "A": [
       {
-        "ticker": "BAESY",
+        "ticker": "ISRG",
+        "action": "Long",
+        "allocation_usd": 10000,
+        "sl_factor": 3.2,
+        "z_score": 0.12,
+        "prev_return_pct": null,
+        "vol_ratio": 1.32,
+        "ticker_group": "BIG + ETF"
+      },
+      {
+        "ticker": "MFC",
         "action": "Long",
         "allocation_usd": 10000,
         "sl_factor": 0.6,
-        "z_score": 0.16,
+        "z_score": 0.09,
         "prev_return_pct": null,
-        "vol_ratio": 0.67,
+        "vol_ratio": 0.72,
         "ticker_group": "BIG + ETF"
       },
       {
-        "ticker": "UBS",
+        "ticker": "AXON",
         "action": "Long",
         "allocation_usd": 10000,
-        "sl_factor": 0.4,
-        "z_score": 0.11,
+        "sl_factor": 1.6,
+        "z_score": 0.08,
         "prev_return_pct": null,
-        "vol_ratio": 0.81,
-        "ticker_group": "BIG + ETF"
-      },
-      {
-        "ticker": "BCS",
-        "action": "Long",
-        "allocation_usd": 10000,
-        "sl_factor": 0.4,
-        "z_score": 0.11,
-        "prev_return_pct": null,
-        "vol_ratio": 1.16,
+        "vol_ratio": 1.0,
         "ticker_group": "BIG + ETF"
       }
     ],
     "B": [
       {
-        "ticker": "RELX",
-        "action": "Long",
+        "ticker": "ORLY",
+        "action": "Short",
         "allocation_usd": 10000,
-        "sl_factor": 0.4,
-        "z_score": 0.14,
+        "sl_factor": 3.2,
+        "z_score": 0.19,
         "prev_return_pct": null,
-        "vol_ratio": 1.51,
+        "vol_ratio": 1.63,
         "ticker_group": "BIG + ETF"
       },
       {
@@ -109,17 +109,17 @@
         "sl_factor": 0.4,
         "z_score": 0.08,
         "prev_return_pct": null,
-        "vol_ratio": 1.82,
+        "vol_ratio": 1.56,
         "ticker_group": "BIG + ETF"
       },
       {
-        "ticker": "SE",
-        "action": "Short",
+        "ticker": "ATEYY",
+        "action": "Long",
         "allocation_usd": 10000,
-        "sl_factor": 0.8,
-        "z_score": 0.07,
+        "sl_factor": 0.4,
+        "z_score": 0.03,
         "prev_return_pct": null,
-        "vol_ratio": 1.93,
+        "vol_ratio": 2.93,
         "ticker_group": "BIG + ETF"
       }
     ],
@@ -129,9 +129,19 @@
         "action": "Long",
         "allocation_usd": 10000,
         "sl_factor": 3.2,
-        "z_score": 0.34,
+        "z_score": 0.35,
         "prev_return_pct": null,
         "vol_ratio": 1.3,
+        "ticker_group": "SMALL"
+      },
+      {
+        "ticker": "CHYM",
+        "action": "Long",
+        "allocation_usd": 10000,
+        "sl_factor": 0.4,
+        "z_score": 0.32,
+        "prev_return_pct": null,
+        "vol_ratio": 0.92,
         "ticker_group": "SMALL"
       },
       {
@@ -141,49 +151,39 @@
         "sl_factor": 3.2,
         "z_score": 0.22,
         "prev_return_pct": null,
-        "vol_ratio": 0.5,
-        "ticker_group": "SMALL"
-      },
-      {
-        "ticker": "GMAB",
-        "action": "Long",
-        "allocation_usd": 10000,
-        "sl_factor": 0.8,
-        "z_score": 0.16,
-        "prev_return_pct": null,
-        "vol_ratio": 0.9,
+        "vol_ratio": 0.54,
         "ticker_group": "SMALL"
       }
     ],
     "M": [
       {
-        "ticker": "NJDCY",
+        "ticker": "SOTGY",
         "action": "Long",
         "allocation_usd": 10000,
         "sl_factor": 0.4,
         "z_score": null,
-        "prev_return_pct": 16.31,
-        "vol_ratio": 1.14,
+        "prev_return_pct": 6.51,
+        "vol_ratio": 0.22,
         "ticker_group": "SMALL"
       },
       {
-        "ticker": "RIVN",
+        "ticker": "PR",
         "action": "Long",
         "allocation_usd": 10000,
-        "sl_factor": 0.8,
+        "sl_factor": 0.6,
         "z_score": null,
-        "prev_return_pct": 8.57,
-        "vol_ratio": 2.41,
+        "prev_return_pct": 4.26,
+        "vol_ratio": 0.58,
         "ticker_group": "SMALL"
       },
       {
-        "ticker": "IOT",
+        "ticker": "DVN",
         "action": "Long",
         "allocation_usd": 10000,
-        "sl_factor": 3.2,
+        "sl_factor": 0.6,
         "z_score": null,
-        "prev_return_pct": 5.93,
-        "vol_ratio": 0.85,
+        "prev_return_pct": 4.0,
+        "vol_ratio": 1.18,
         "ticker_group": "SMALL"
       }
     ]
@@ -605,6 +605,10 @@
       {
         "date": "2026-07-06",
         "equity": 10910.17
+      },
+      {
+        "date": "2026-07-07",
+        "equity": 10675.48
       }
     ],
     "B": [
@@ -1023,6 +1027,10 @@
       {
         "date": "2026-07-06",
         "equity": 5241.51
+      },
+      {
+        "date": "2026-07-07",
+        "equity": 5115.56
       }
     ],
     "V": [
@@ -1441,6 +1449,10 @@
       {
         "date": "2026-07-06",
         "equity": 13368.02
+      },
+      {
+        "date": "2026-07-07",
+        "equity": 13303.64
       }
     ],
     "M": [
@@ -1859,6 +1871,10 @@
       {
         "date": "2026-07-06",
         "equity": 34278.59
+      },
+      {
+        "date": "2026-07-07",
+        "equity": 33266.98
       }
     ]
   }
