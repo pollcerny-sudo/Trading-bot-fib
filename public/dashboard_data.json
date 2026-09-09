@@ -1,60 +1,60 @@
 {
-  "timestamp": "2026-09-08T00:52:28.722824",
+  "timestamp": "2026-09-09T00:56:30.146329",
   "strategies": {
     "A": {
       "name": "Mean Reversion",
       "metrics": {
-        "total_profit": -739.7900000000001,
-        "total_return_pct": -7.3979,
-        "num_trades": 459,
-        "win_rate": 49.45533769063181,
-        "avg_win": 113.53881057268723,
-        "avg_loss": -114.28060344827587,
-        "sharpe_ratio": -0.16012956914602827,
+        "total_profit": -1089.74,
+        "total_return_pct": -10.8974,
+        "num_trades": 462,
+        "win_rate": 49.35064935064935,
+        "avg_win": 113.2776754385965,
+        "avg_loss": -115.03012820512822,
+        "sharpe_ratio": -0.23366737592235537,
         "max_drawdown_pct": 30.251212997283073,
-        "profit_factor": 0.9935090220631851
+        "profit_factor": 0.9847652715521046
       }
     },
     "B": {
       "name": "Volume Breakout",
       "metrics": {
-        "total_profit": -3871.1300000000015,
-        "total_return_pct": -38.711300000000016,
-        "num_trades": 458,
-        "win_rate": 41.70305676855895,
+        "total_profit": -4659.470000000001,
+        "total_return_pct": -46.59470000000001,
+        "num_trades": 461,
+        "win_rate": 41.431670281995665,
         "avg_win": 160.05905759162303,
-        "avg_loss": -128.9977902621723,
-        "sharpe_ratio": -0.6866876773930478,
+        "avg_loss": -130.48425925925926,
+        "sharpe_ratio": -0.8150644069952716,
         "max_drawdown_pct": 74.56087298841067,
-        "profit_factor": 1.2407891427157203
+        "profit_factor": 1.2266541458736535
       }
     },
     "V": {
       "name": "Trend Breakout",
       "metrics": {
-        "total_profit": 5838.36,
-        "total_return_pct": 58.3836,
-        "num_trades": 460,
-        "win_rate": 46.95652173913044,
-        "avg_win": 154.5977777777778,
-        "avg_loss": -112.92934426229506,
-        "sharpe_ratio": 0.9690937907691053,
+        "total_profit": 5397.789999999999,
+        "total_return_pct": 53.97789999999999,
+        "num_trades": 463,
+        "win_rate": 46.868250539956804,
+        "avg_win": 153.89769585253458,
+        "avg_loss": -113.81304878048779,
+        "sharpe_ratio": 0.888975808585607,
         "max_drawdown_pct": 27.739550141287967,
-        "profit_factor": 1.368977910813877
+        "profit_factor": 1.3521972875830643
       }
     },
     "M": {
       "name": "Momentum",
       "metrics": {
-        "total_profit": 18622.909999999996,
-        "total_return_pct": 186.22909999999996,
-        "num_trades": 427,
-        "win_rate": 46.37002341920375,
-        "avg_win": 393.3916666666667,
+        "total_profit": 19338.619999999995,
+        "total_return_pct": 193.38619999999995,
+        "num_trades": 429,
+        "win_rate": 46.620046620046615,
+        "avg_win": 393.03630000000004,
         "avg_loss": -258.81502183406116,
-        "sharpe_ratio": 1.5946899726541444,
+        "sharpe_ratio": 1.6500938197697241,
         "max_drawdown_pct": 32.57601133964792,
-        "profit_factor": 1.519972310258286
+        "profit_factor": 1.5185992575500298
       }
     }
   },
@@ -131,17 +131,7 @@
         "sl_factor": 1.6,
         "z_score": 0.52,
         "prev_return_pct": null,
-        "vol_ratio": 0.27,
-        "ticker_group": "SMALL"
-      },
-      {
-        "ticker": "RSHGY",
-        "action": "Long",
-        "allocation_usd": 10000,
-        "sl_factor": 0.8,
-        "z_score": 0.28,
-        "prev_return_pct": null,
-        "vol_ratio": 0.49,
+        "vol_ratio": 1.34,
         "ticker_group": "SMALL"
       },
       {
@@ -153,9 +143,29 @@
         "prev_return_pct": null,
         "vol_ratio": 0.52,
         "ticker_group": "SMALL"
+      },
+      {
+        "ticker": "GMAB",
+        "action": "Long",
+        "allocation_usd": 10000,
+        "sl_factor": 0.8,
+        "z_score": 0.17,
+        "prev_return_pct": null,
+        "vol_ratio": 0.32,
+        "ticker_group": "SMALL"
       }
     ],
     "M": [
+      {
+        "ticker": "CKHGF",
+        "action": "Long",
+        "allocation_usd": 10000,
+        "sl_factor": 0.4,
+        "z_score": null,
+        "prev_return_pct": 128.78,
+        "vol_ratio": 0.0,
+        "ticker_group": "SMALL"
+      },
       {
         "ticker": "NBIS",
         "action": "Long",
@@ -174,16 +184,6 @@
         "z_score": null,
         "prev_return_pct": 6.94,
         "vol_ratio": 0.04,
-        "ticker_group": "SMALL"
-      },
-      {
-        "ticker": "BE",
-        "action": "Long",
-        "allocation_usd": 10000,
-        "sl_factor": 0.4,
-        "z_score": null,
-        "prev_return_pct": 6.78,
-        "vol_ratio": 1.31,
         "ticker_group": "SMALL"
       }
     ]
@@ -781,6 +781,10 @@
       {
         "date": "2026-09-04",
         "equity": 9260.21
+      },
+      {
+        "date": "2026-09-08",
+        "equity": 8910.26
       }
     ],
     "B": [
@@ -1375,6 +1379,10 @@
       {
         "date": "2026-09-04",
         "equity": 6128.87
+      },
+      {
+        "date": "2026-09-08",
+        "equity": 5340.53
       }
     ],
     "V": [
@@ -1969,6 +1977,10 @@
       {
         "date": "2026-09-04",
         "equity": 15838.36
+      },
+      {
+        "date": "2026-09-08",
+        "equity": 15397.79
       }
     ],
     "M": [
@@ -2563,6 +2575,10 @@
       {
         "date": "2026-09-04",
         "equity": 28622.91
+      },
+      {
+        "date": "2026-09-08",
+        "equity": 29338.62
       }
     ]
   }
