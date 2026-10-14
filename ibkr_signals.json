@@ -1,16 +1,6 @@
 {
     "A": [
         {
-            "ticker": "MO",
-            "action": "Long",
-            "allocation_usd": 10000,
-            "sl_factor": 0.6,
-            "z_score": 0.1,
-            "prev_return_pct": null,
-            "vol_ratio": 1.03,
-            "ticker_group": "BIG + ETF"
-        },
-        {
             "ticker": "DELL",
             "action": "Long",
             "allocation_usd": 10000,
@@ -18,6 +8,16 @@
             "z_score": 0.09,
             "prev_return_pct": null,
             "vol_ratio": 0.74,
+            "ticker_group": "BIG + ETF"
+        },
+        {
+            "ticker": "MO",
+            "action": "Long",
+            "allocation_usd": 10000,
+            "sl_factor": 0.6,
+            "z_score": 0.09,
+            "prev_return_pct": null,
+            "vol_ratio": 1.03,
             "ticker_group": "BIG + ETF"
         },
         {
